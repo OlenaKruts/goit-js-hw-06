@@ -45,7 +45,7 @@ function createBoxes(amount) {
     divEl.style.height = divElChangeSize;
     divEl.style.color = getRandomHexColor();
     divAll.push(divEl);
-    console.log(divEl);
+    //console.log(divEl);
   }
   boxesEl.append(...divAll);
 }
@@ -55,10 +55,12 @@ btnCreateEl.addEventListener("click", () => {
   createBoxes(amount);
 });
 
-btnDestroyEl.addEventListener("click", (event) => {
-  const divBoxesEl = boxesEl.children;
-  boxesEl.innerHTML = "";
-  event.preventDefault();
-  inputAmountEl.value = "";
-});
-//закончено
+btnDestroyEl.addEventListener("click", destroyBoxes);
+
+function destroyBoxes() {
+  for (const divElement of divAll) {
+    divElement.remove();
+  }
+}
+
+// закончено
