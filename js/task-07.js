@@ -8,6 +8,7 @@
 
 const inputEl = document.querySelector("#font-size-control");
 const rangeEl = document.querySelector("#text");
+rangeEl.style.fontSize = inputEl.value + "px";
 
 inputEl.addEventListener("input", onRangeChange);
 function onRangeChange(event) {

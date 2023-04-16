@@ -27,20 +27,23 @@
 const inputChangeBorder = document.querySelector("#validation-input");
 const lengthAttribute = inputChangeBorder.getAttribute("data-length");
 
-console.log(lengthAttribute);
+//console.log(lengthAttribute);
 
 inputChangeBorder.addEventListener("blur", onValidInput);
 
 function onValidInput(event) {
-  console.log(event.currentTarget.value.length);
-  console.log(lengthAttribute);
-  console.log(event.currentTarget.value.length == lengthAttribute);
+  //console.log(event.currentTarget.value.length);
+  //console.log(lengthAttribute);
+  //console.log(event.currentTarget.value.length == lengthAttribute);
   if (event.currentTarget.value.length == lengthAttribute) {
     inputChangeBorder.classList.add("valid");
-    console.log(inputChangeBorder);
+    inputChangeBorder.classList.remove("invalid");
+
+    //console.log(inputChangeBorder);
   } else {
+    inputChangeBorder.classList.remove("valid");
     inputChangeBorder.classList.add("invalid");
-    console.log(inputChangeBorder);
+    //console.log(inputChangeBorder);
   }
 }
 

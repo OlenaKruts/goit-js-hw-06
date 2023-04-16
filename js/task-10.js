@@ -3,6 +3,7 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+console.log(getRandomHexColor());
 // Напиши скрипт створення і очищення колекції елементів.
 // Користувач вводить кількість елементів в input і натискає кнопку Створити,
 // після чого рендериться колекція.
@@ -43,7 +44,11 @@ function createBoxes(amount) {
       divElFirstSize + (i - 1) * divElSizeChangeStep + "px";
     divEl.style.width = divElChangeSize;
     divEl.style.height = divElChangeSize;
-    divEl.style.color = getRandomHexColor();
+    divEl.style.backgroundColor = getRandomHexColor();
+    //divEl.textContent = "бокс";
+    console.log(getRandomHexColor());
+    console.log(divEl.style.color);
+
     divAll.push(divEl);
     //console.log(divEl);
   }
@@ -60,6 +65,7 @@ btnDestroyEl.addEventListener("click", destroyBoxes);
 function destroyBoxes() {
   for (const divElement of divAll) {
     divElement.remove();
+    divAll = [];
   }
 }
 
